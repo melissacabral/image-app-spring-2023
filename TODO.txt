@@ -1,7 +1,8 @@
 TODO
 =====
 
-
+* build the registration form 
+* build the login form
 * make the comment form use the logged in user
 
 
