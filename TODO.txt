@@ -1,0 +1,24 @@
+TODO
+=====
+
+
+* make the comment form use the logged in user
+
+
+DONE
+=====
+* make functions to handle the appearance of date timestamps
+* write custom function to count comments on a post
+* add category and author information on each post
+* Add the single post template
+* Improve the queries we wrote last time to include:
+	- a count of posts in each category
+* list all the approved comments on single
+* make the comment form
+* parse new comments
+
+* make a function to display the userpic
+
+* build the search form
+* build the search results page
+* add pagination to "flip" through the results
