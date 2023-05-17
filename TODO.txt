@@ -1,7 +1,6 @@
 TODO
 =====
 
-* build the registration form 
 * build the login form
 * make the comment form use the logged in user
 
@@ -23,3 +22,5 @@ DONE
 * build the search form
 * build the search results page
 * add pagination to "flip" through the results
+
+* build the registration form 
