@@ -56,3 +56,5 @@ $DB = new PDO( "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
 	                    PDO::ATTR_PERSISTENT => false
 	                )
 	            );
+
+session_start();

@@ -18,9 +18,9 @@ if( isset( $_POST['did_comment'] ) ){
 								( user_id, date, body, post_id, is_approved )
 								VALUES 
 								( :user, NOW(), :body, :post, 1 ) ');
-		//@TODO: make the user based off of the login
+		
 		$result->execute( array(
-			'user' => 1,
+			'user' => $logged_in_user['user_id'],
 			'body' => $body,
 			'post' => $post_id,
 		) );

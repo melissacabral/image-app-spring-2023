@@ -17,9 +17,9 @@ if(isset($_GET['post_id'])){
 		$post_id = 0;
 	}
 }
-//parse the form before the doctype (header)
-require( 'includes/parse-comment.php' );
+
 require( 'includes/header.php' );
+require( 'includes/parse-comment.php' );
 ?>
 <!--testing comment-->
 <main class="content">
@@ -66,7 +66,7 @@ require( 'includes/header.php' );
 		//load the comments on this post
 		require('includes/comments.php');	
 		//comment form if allowed
-		if( $allow_comments ){
+		if( $allow_comments AND $logged_in_user ){
 			require('includes/comment-form.php');	
 		}
 	}else{

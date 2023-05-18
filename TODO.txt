@@ -1,7 +1,7 @@
 TODO
 =====
 
-* build the login form
+* make the logout logic
 * make the comment form use the logged in user
 
 
@@ -24,3 +24,5 @@ DONE
 * add pagination to "flip" through the results
 
 * build the registration form 
+* build the login form
+* make the "login/register" buttons change to "user account/log out" button

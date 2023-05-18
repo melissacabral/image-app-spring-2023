@@ -1,3 +1,6 @@
+<?php 
+$logged_in_user = check_login();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +25,17 @@
 				<label for="menu-button" class="burger pseudo button">&#9776;</label>
 
 				<div class="menu">
+					<?php if( $logged_in_user ){ ?>
+
+					<a href="profile.php"><?php echo $logged_in_user['username']; ?></a>
+					<a href="login.php?action=logout">Log Out</a>
+
+					<?php }else{ ?>
+
 					<a href="register.php">Sign Up</a>
+					<a href="login.php">Log In</a>
+
+					<?php } ?>
 				                       
 				    <form action="search.php" method="get" class="searchform">
 				        <input type="search" name="phrase" placeholder="Search">
