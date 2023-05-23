@@ -1,8 +1,7 @@
 TODO
 =====
 
-* make the logout logic
-* make the comment form use the logged in user
+* make the "edit post" page (step 2 of new post)
 
 
 DONE
@@ -26,3 +25,6 @@ DONE
 * build the registration form 
 * build the login form
 * make the "login/register" buttons change to "user account/log out" button
+* make the logout logic
+* make the comment form use the logged in user
+* make the "new post" page

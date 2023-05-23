@@ -27,6 +27,7 @@ $logged_in_user = check_login();
 				<div class="menu">
 					<?php if( $logged_in_user ){ ?>
 
+					<a href="new-post.php">&plus; New Post</a>
 					<a href="profile.php"><?php echo $logged_in_user['username']; ?></a>
 					<a href="login.php?action=logout">Log Out</a>
 
