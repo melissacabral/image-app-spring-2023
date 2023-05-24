@@ -158,5 +158,69 @@ function check_login(){
     }
 }
 
+/*
+Display all categories as a form dropdown
+*/
+function category_dropdown(){
+    global $DB;
+    $result = $DB->prepare('SELECT * FROM categories ORDER BY name ASC');
+    $result->execute();
+    if($result->rowCount()){
+        echo '<select name="category_id">';
+        while( $row = $result->fetch() ){
+            extract($row);
+            echo "<option value='$category_id'>$name</option>";
+        }
+        echo '</select>';
+    }
+}
+
+/*
+Checkbox Helper
+*/
+function checked( $thing1, $thing2 ){
+    if( $thing1 == $thing2 ){
+        echo 'checked';
+    }
+}
+
+/*
+Select helper
+*/
+function selected( $thing1, $thing2 ){
+    if( $thing1 == $thing2 ){
+        echo 'selected';
+    }
+}
+
+/**
+ * Display the image of any post
+ * @param  string $unique The unique string identifier of the image
+ * @param  string $size   'small' 'medium' or 'large'
+ * @param  string $alt    img alt text
+ * @return string         HTML img tag
+ */
+function show_post_image( $unique, $size = 'medium', $alt = 'post image'  ){
+    $url = "uploads/$unique" . '_' . "$size.jpg";
+    //if the "unique" is not an absolute path, format it. 
+    //this makes our old placeholder images still work. Not really necessary but nice for this class. 
+    if( strpos( $unique, 'http' ) === 0 ){
+        $url = $unique;
+    }
+echo "<img src='$url' alt='$alt' class='post-image is-$size'>";
+}
+
+
+/*
+Edit Post Button
+ */
+function edit_post_button( $post_id = 0, $post_author = 0 ){
+    global $logged_in_user;
+    //if the user is logged in and this is their post, show the button
+    if( $logged_in_user AND $logged_in_user['user_id'] == $post_author ){
+        echo "<a href='edit-post.php?post_id=$post_id' class='button edit-post-button' >Edit</a>";
+    }
+}
+
 
 //no close php

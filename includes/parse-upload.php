@@ -106,7 +106,10 @@ if( isset($_POST['did_upload']) ){
 				//success
 				$feedback = 'Success';
 				$feedback_class = 'success';
-				//TODO: redirect to "edit details"
+				//redirect to "edit details"
+				//grab the ID of the post we just inserted
+				$post_id = $DB->lastInsertId();
+				header("Location:edit-post.php?post_id=$post_id");
 			}else{
 				//DB error
 				$feedback = 'Your post could not be saved.';

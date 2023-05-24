@@ -1,7 +1,7 @@
 TODO
 =====
 
-* make the "edit post" page (step 2 of new post)
+
 
 
 DONE
@@ -28,3 +28,7 @@ DONE
 * make the logout logic
 * make the comment form use the logged in user
 * make the "new post" page
+
+* Make a function to display uploaded images at any size
+* Finish the "edit post" process (step 2 of "new post")
+* Make an edit button so users can edit their own posts

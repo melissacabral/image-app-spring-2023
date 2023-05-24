@@ -3,7 +3,7 @@ require_once( 'config.php' );
 require_once( 'includes/functions.php' );
 
 //CONFIGURE search pagination
-$per_page = 3;
+$per_page = 10;
 
 $current_page = 1;
 
@@ -23,7 +23,7 @@ if( isset($_GET['phrase']) ){
 require( 'includes/header.php' );
 ?>
 <main class="content">
-	<div class="posts-container flex one two-600 three-900">
+	<div class="posts-container flex three four-600 five-900">
 		<?php 
 		//get all the matching published posts
 		$query = 'SELECT * FROM posts
@@ -79,7 +79,7 @@ require( 'includes/header.php' );
 		<div class="card">
 			<div class="post-image-header">
 				<a href="single.php?post_id=<?php echo $row['post_id']; ?>">
-					<img src="<?php echo $row['image']; ?>" alt='<?php echo $row['title']; ?>' class='post-image'>
+					<?php show_post_image( $row['image'], 'small', $row['title']  ); ?>
 				</a>
 			</div>
 			<footer>

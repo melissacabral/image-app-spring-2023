@@ -42,7 +42,7 @@ require( 'includes/parse-comment.php' );
 	<article class="post">
 		<div class="card flex one two-700">
 			<div class="post-image-header two-third-700">
-				<img src="<?php echo $row['image']; ?>" alt='<?php echo $row['title']; ?>' class='post-image'>
+				<?php show_post_image( $row['image'], 'large', $row['title']  ); ?>
 			</div>
 			<footer class="third-700">
 			<?php user_info( $row['user_id'], $row['username'], $row['profile_pic']  ); ?>
