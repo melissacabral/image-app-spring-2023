@@ -61,21 +61,29 @@ function count_comments( $post_id ){
 
 
 /*
-Show user info (profile pic and username)
+Show user info (profile pic and username combined)
 */
-function user_info( $id, $username, $profile_pic = 'avatars/default.png'){
-    //check if the profile pic exists 
-    if($profile_pic == ''){
-        $profile_pic = 'avatars/default.png';
-    }
+function user_info( $id, $username, $size, $profile_pic = ''){  
     ?>
     <div class="user">
-        <a href="#">
-            <img src="<?php echo $profile_pic; ?>" alt="<?php echo $username; ?>'s profile picture" width="50" height="50" class="profile-pic">
+        <a href="profile.php?user_id=<?php echo $id; ?>">
+           <?php show_profile_pic($profile_pic); ?>
             <span><?php echo $username; ?></span>
         </a>
     </div>
     <?php   
+}
+/*
+Show a profile pic at any size
+ */
+function show_profile_pic($src, $size = 50, $alt = 'Profile Picture' ){
+    //check if src is blank
+    if( '' ==  $src ){
+        $src =  'avatars/default.png';
+    }
+    ?>
+    <img class="profile-pic" src="<?php echo $src ?>" alt="<?php echo $alt ?>" width="<?php echo $size ?>" height="<?php echo $size ?>">
+    <?php 
 }
 
 /**
