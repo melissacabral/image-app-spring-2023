@@ -17,6 +17,7 @@ require( 'includes/header.php' );
 			LIMIT 20'); 
 		//2. run it (execute)
 		$result->execute();
+		
 
 		//3. check it (were any posts found?)
 		if( $result->rowCount() ){
@@ -35,8 +36,13 @@ require( 'includes/header.php' );
 				<?php edit_post_button( $row['post_id'], $row['user_id'] ); ?>
 			</div>
 			<footer>
-				<div class="post-header">
+				<div class="post-header flex two">
 			<?php user_info( $row['user_id'], $row['username'], $row['profile_pic']  ); ?>
+					
+					<div class="likes">  
+					<?php like_interface( $row['post_id'] ); ?>
+					</div>
+
 				</div> <!-- post header -->
 
 				<h3 class="post-title clamp"><?php echo $row['title']; ?></h3>

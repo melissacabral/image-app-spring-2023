@@ -34,6 +34,7 @@ require( 'includes/parse-comment.php' );
 			LIMIT 1');
 	//run it with the placeholder data
 	$result->execute( array( $post_id ) );
+
 	//check it
 	if( $result->rowCount() ){
 		//loop it
@@ -45,7 +46,13 @@ require( 'includes/parse-comment.php' );
 				<?php show_post_image( $row['image'], 'large', $row['title']  ); ?>
 			</div>
 			<footer class="third-700">
+				<div class="flex">
 			<?php user_info( $row['user_id'], $row['username'], $row['profile_pic']  ); ?>
+
+			<div class="likes">  
+				<?php like_interface( $row['post_id'] ); ?>
+			</div>
+		</div>
 				
 				<h3><?php echo $row['title']; ?></h3>
 				<p><?php echo $row['body']; ?></p>
