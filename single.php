@@ -42,10 +42,10 @@ require( 'includes/parse-comment.php' );
 			?>
 			<article class="post">
 				<div class="card flex one two-700">
-					<div class="post-image-header two-third-700">
+					<div class="post-image-header three-fifth-600">
 						<?php show_post_image( $row['image'], 'large', $row['title']  ); ?>
 					</div>
-					<footer class="third-700">
+					<footer class="two-fifth-600">
 						<div class="flex">
 							<?php user_info( $row['user_id'], $row['username'], $row['profile_pic']  ); ?>
 
@@ -64,7 +64,13 @@ require( 'includes/parse-comment.php' );
 							</span>
 							<span class="category"><?php echo $row['name']; ?></span>		
 						</div>
+
+						<div class="rating">
+							<?php star_interface($row['post_id']); ?>
+						</div>
+						
 					</footer>
+
 				</div>
 			</article>
 			<?php

@@ -30,9 +30,9 @@ if(isset($_GET['user_id'])){
 				<?php show_profile_pic($profile_pic, 100, $username ); ?>
 				<h2><?php echo $username ?></h2>
 				<p><?php echo $bio; ?></p>
-				<!-- <div class="flex" id="follow-info">
-					<?php //follows_interface( $user_id ); ?>
-				</div> -->
+				<div class="flex" id="follow-info">
+					<?php follows_interface( $user_id ); ?>
+				</div>
 				<hr>
 			</section>
 			<?php

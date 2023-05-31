@@ -39,7 +39,7 @@ require( 'includes/header.php' );
 				<div class="post-header flex two">
 			<?php user_info( $row['user_id'], $row['username'], $row['profile_pic']  ); ?>
 					
-					<div class="likes">  
+					<div class="likes fifth">  
 					<?php like_interface( $row['post_id'] ); ?>
 					</div>
 

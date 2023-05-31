@@ -37,6 +37,7 @@
 	--color-feedback: khaki;
 	--color-error: pink;
 	--color-success: lightgreen;
+  --gutter: .8em;
 }
 
 /*
@@ -134,7 +135,14 @@ label{
 .sidebar .button{
   background-color: #FAFAFA;
 }
-
+.user{
+  display: flex;
+  align-items: center;
+ gap: var(--gutter);
+}
+.user a{
+  color: var(--color-text);
+}
 .profile-pic {
   border-radius: 100%;
   box-shadow: 0 2px 4px rgba(0,0,0,.2);
@@ -172,7 +180,7 @@ img {
   color: #999;
 }
 .draft .card{
-  background-color: #979797;
+  background-color: #BABABA;
   opacity: .7;
 }
 
@@ -269,7 +277,9 @@ z-index: 1;
 text-align: center;
 } 
 
-/* likes - default "not-liked" gray heart */
+/* 
+== likes - default "not-liked" gray heart 
+*/
 .heart-button{
   color:white;
   text-shadow: -1px -1px 0 gray,
@@ -285,4 +295,39 @@ text-align: center;
   color:red;
   text-shadow:none;
   -webkit-text-stroke: 1px red;
+}
+
+/* 
+== Star rating
+@see https://codepen.io/mcintosh101/pen/vYypMQ 
+*/
+*.star-icon {
+    color: #ddd;
+    font-size: 2em;
+    position: relative;
+}
+
+.star-icon.star-full:before {
+    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    color: #FDE16D;
+    content: '\2605'; /* Full star in UTF-8 */
+    position: absolute;
+    left: 0;
+}
+
+.star-icon.star-half:before {
+    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    color: #FDE16D;
+    content: '\2605'; /* Full star in UTF-8 */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+@-moz-document url-prefix() { /* Firefox Hack :( */
+  .star-icon {
+    font-size: 50px;
+    line-height: 34px;
+  }
 }
